@@ -1,0 +1,73 @@
+[
+ {
+  "id": 1,
+  "name": "Escritorio X",
+  "price": "40.000",
+  "description": "Escritorio hecho con madera refinada y soporte de hierro en forma de X. Con un atractivo diseño, este modelo combina lo fino y delicado con el estilo industrial e informal, ideal para cualquier espacio de la casa.",
+  "image": [
+   "escritorio.jpg"
+  ],
+  "measures": "74cm de altura - 60 cm de ancho - 120cm de largo.",
+  "discount": 10,
+  "category": "desk"
+ },
+ {
+  "id": 2,
+  "name": "Mesa Cruz Guayubirá",
+  "price": "130.000",
+  "description": "Mesa de comedor de hierro y madera estilo industrial",
+  "image": [
+   "mesa-x.jpg"
+  ],
+  "measures": "1.20mts de largo - 70cm de ancho - 75cm de alto.",
+  "discount": 15,
+  "category": "table"
+ },
+ {
+  "id": 4,
+  "name": "Espejo Blackfe",
+  "price": "21.900",
+  "description": "Espejo con marco y recuadros de hierro estilo industrial",
+  "image": [
+   "espejo.jpg"
+  ],
+  "measures": "44cm de largo - 10cm de profundidad",
+  "discount": 10,
+  "category": "mirror"
+ },
+ {
+  "name": "",
+  "description": "",
+  "measures": "",
+  "price": "",
+  "discount": "",
+  "category": "",
+  "image": [
+   "default-image.svg"
+  ],
+  "id": 9
+ },
+ {
+  "name": "Mesa Ratona Industrial unicornio 3000",
+  "description": "Hermosa mesa ratona realizada a mano en el camino hacia el dorado.",
+  "measures": "100 - 100 - 75",
+  "price": "45000",
+  "discount": "5",
+  "category": "coffeeTable",
+  "image": [
+   "imgProduct_1659658170813.jpg"
+  ],
+  "id": 10
+ },
+ {
+  "id": 11,
+  "name": "Espejo largo ",
+  "description": "Espejo para suelo",
+  "measures": "1m - 75 cm - 1m",
+  "price": "50.000",
+  "discount": "15",
+  "image": [
+   "imgProduct_1659902735779.jpg"
+  ]
+ }
+]
