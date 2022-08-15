@@ -1,11 +1,24 @@
 const express = require('express')
 const app = express()
 const path = require('path')
-const methodOverride =  require('method-override');
-const port = process.env.PORT || 3000;
+const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
 
-app.use(methodOverride('_method')); 
-app.use(express.json());
+app.use(express.urlencoded({ extended: false })); // para poder trabajar con formularios
+app.use(methodOverride('_method'));  // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
+app.use(express.json()); // para poder trabajar con información que llegue en formato json
+
+app.use(session({
+	secret: "Shhh, It's a secret",
+	resave: false,
+	saveUninitialized: false,
+}));
+
+app.use(cookies());
+app.use(userLoggedMiddleware);
+
 
 let publicPath = path.resolve(__dirname, "../public")
 app.use(express.static(publicPath))
@@ -17,12 +30,15 @@ app.set('view engine', 'ejs');
 const mainRouter = require("./routes/mainRouter")
 app.use("/" ,mainRouter)
 
+//Users
 const userRouter = require("./routes/userRouter")
 app.use("/users", userRouter)
 
+// Products
 const productRouter = require("./routes/productRouter")
 app.use("/products", productRouter)
 
+const port = process.env.PORT || 3000;
 
 /*app.use((req, res, next) => {
     const error = new Error('Error 404 - No se encontró la pagina solicitada');

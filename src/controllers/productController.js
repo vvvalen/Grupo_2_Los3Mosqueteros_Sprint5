@@ -1,4 +1,4 @@
-const jsonDB = require('../model/jsonDatabase'); 
+const jsonDB = require('../model/universalModel'); 
 const products = jsonDB('products') // funcionalides de json database
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const path = require('path');

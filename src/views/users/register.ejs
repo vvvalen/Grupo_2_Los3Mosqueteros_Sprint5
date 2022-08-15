@@ -2,7 +2,6 @@
 <html lang="en">
     <head>
         <%- include("../partials/head.ejs") %>
-        <title>Register</title>
     </head>
 <body>
     <%- include("../partials/header.ejs") %>
@@ -13,7 +12,11 @@
             <form class="login-register-form" action="#" method="post">
                 <div>
                     <label for="name">Nombre</label>
-                    <input class='control' type="text" id="name" name="visitor_name" placeholder="Ej. Juan Perez" required>
+                    <input class='control' type="text" id="name" name="visitor_name" placeholder="Ej. Juan" required>
+                </div>
+                <div>
+                    <label for="name">Apellido</label>
+                    <input class='control' type="text" id="name" name="visitor_name" placeholder="Ej. Perez" required>
                 </div>
                 <div>
                     <label for="email">Email</label>
@@ -31,9 +34,13 @@
                     <label for="checkpassword">Confirmar contraseña</label>
                     <input class='control' type="password" id="password" name="visitor_password" placeholder="Confirmar contraseña" required>
                 </div>
+                <div>
+                    <label for="image">Avatar</label>
+                    <input class='control' type="file" id="image" name="avatar" multiple accept=".jpg, .png, .jpeg, .svg">
+                </div>
                 <div class="login-register-btn">
                     <input class="button" type="submit" value="CREAR">
-                    <p>¿Ya tenés cuenta? <a href="/users/login">Iniciá sesión!</a></p>
+                    <p>¿Ya tenés cuenta? <a href="/users/login">¡Iniciá sesión!</a></p>
                 </div>
             </form>   
         </section>

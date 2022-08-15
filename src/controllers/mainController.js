@@ -1,4 +1,4 @@
-const jsonDB = require('../model/jsonDatabase');
+const jsonDB = require('../model/universalModel');
 const products = jsonDB('products')
 const mainController = {
     home: (req,res) =>{
