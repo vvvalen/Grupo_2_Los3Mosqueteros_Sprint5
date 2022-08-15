@@ -69,5 +69,17 @@
   "image": [
    "imgProduct_1659902735779.jpg"
   ]
+ },
+ {
+  "name": "Mesa redonda",
+  "description": "Mesa para 4",
+  "measures": "1m - 75 cm - 1m",
+  "price": "40.000",
+  "discount": "5",
+  "category": "table",
+  "image": [
+   "imgProduct_1660581216369.jpg"
+  ],
+  "id": 12
  }
 ]

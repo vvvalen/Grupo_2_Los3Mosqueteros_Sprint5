@@ -2,8 +2,8 @@ const { validationResult } = require("express-validator");
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-const universalModel = require("../model/universalModel");
-const userModel = universalModel("users");
+// const universalModel = require("../model/universalModel");
+const userModel = require("../model/usersModel");
 
 const userController = {
 
@@ -31,13 +31,14 @@ const userController = {
 
             console.log(req.body);
 
-            delete req.body.password;   
+            delete req.body.password;
 
             console.log(req.body);
 
             return res.render("users/register", {
                 errors: errores.mapped(),
                 oldData: req.body,
+                title: "Register"
             
             })
         }
@@ -59,10 +60,10 @@ const userController = {
             return res.render("users/register", {
                 errors: error,
                 oldData: req.body,
+                title: "Register"
             })
         }
 
-        delete req.body.rePassword;
 
         const newUsuario = {
             ...req.body,
@@ -91,7 +92,8 @@ const userController = {
         if(!errores.isEmpty()){
             return res.render("users/login", {
                 errors: errores.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                title: "Login"
             })
         }
         const usuarioRegistrado = userModel.findFirstByField("email", req.body.email);
@@ -104,7 +106,8 @@ const userController = {
             }
             return res.render("users/login", {
                 errors: error,
-                oldData: req.body
+                oldData: req.body,
+                title: "Login"
             })
         }
 
@@ -118,7 +121,8 @@ const userController = {
             }
             return res.render("users/login", {
                 errors: error,
-                oldData: req.body
+                oldData: req.body,
+                title: "Login"
             })
         }
 
