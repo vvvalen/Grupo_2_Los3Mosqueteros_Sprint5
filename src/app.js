@@ -4,11 +4,13 @@ const path = require('path')
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const cookies = require('cookie-parser');
+
 const userLoggedMiddleware = require('./middleware/userLoggedMiddleware');
 
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false })); // para poder trabajar con formularios
-app.use(methodOverride('_method'));  // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(express.json()); // para poder trabajar con información que llegue en formato json
+app.use(methodOverride('_method'));  // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 app.use(session({
 	secret: "Shhh, It's a secret",
@@ -20,9 +22,7 @@ app.use(cookies());
 app.use(userLoggedMiddleware);
 
 
-let publicPath = path.resolve(__dirname, "../public")
-app.use(express.static(publicPath))
-app.use(express.json());
+
 
 app.set('views', path.resolve(__dirname, './views')); 
 app.set('view engine', 'ejs');

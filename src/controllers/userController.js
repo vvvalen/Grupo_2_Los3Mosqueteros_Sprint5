@@ -3,7 +3,8 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 // const universalModel = require("../model/universalModel");
-const userModel = require("../model/usersModel");
+const universalModel = require("../model/universalModel");
+const userModel = universalModel("users");
 
 const userController = {
 
@@ -32,6 +33,7 @@ const userController = {
             console.log(req.body);
 
             delete req.body.password;
+            delete req.body.rePassword;
 
             console.log(req.body);
 
@@ -64,6 +66,7 @@ const userController = {
             })
         }
 
+        delete req.body.rePassword;
 
         const newUsuario = {
             ...req.body,
@@ -73,12 +76,12 @@ const userController = {
 
         userModel.create(newUsuario);
 
-        return res.redirect("users/login");
+        return res.redirect("/users/login");
     },
 
     // 3. Mostrar form login
     login: (req,res) =>{
-        res.render("users/login",
+        res.render("/users/login",
         {
             title: "Login"
         }

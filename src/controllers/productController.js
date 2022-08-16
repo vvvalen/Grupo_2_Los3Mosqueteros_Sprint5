@@ -1,12 +1,15 @@
-const jsonDB = require('../model/universalModel'); 
-const products = jsonDB('products') // funcionalides de json database
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const path = require('path');
 const fs = require('fs');
+const { validationResult } = require("express-validator");
+
+const universalModel = require('../model/universalModel'); 
+const productModel = universalModel('products');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 const productController = {
 
     listadoProductos: (req,res) =>{
-        const allProducts = products.all() // productos todo lo que labura con el array de productos va con allproducts
+        const allProducts = productModel.findAll() // productos todo lo que labura con el array de productos va con allproducts
         const table = allProducts.filter( product => product.category == "table" );
         const coffeeTable = allProducts.filter( product => product.category == "coffeeTable" );
         const desk = allProducts.filter( product => product.category == "desk" );
@@ -27,7 +30,7 @@ const productController = {
         res.render("productos/productCart",
         {
             title: "Carrito",
-            products,
+            product,
             
         }
         )
@@ -36,9 +39,9 @@ const productController = {
     // Detail
 
     detail: (req,res) =>{
-        const product = products.find(req.params.id);
-        /*const product = products.find(product => product.id === id)*/
-        res.render("productos/productDetail",
+        const product = productModel.findById(req.params.id);
+        /*const product = productModel.find(product => product.id === id)*/
+        res.render("./productos/productDetail",
         {
             title: "Detalle",
             product,
@@ -67,7 +70,7 @@ const productController = {
 			image: req.files.length >= 1  ? images : ["default-image.svg"]
 
 		}
-		products.create(newProduct)
+		productModel.create(newProduct)
 		console.log('cree un nuevo producto')
 		res.redirect('/products')
 	},
@@ -75,7 +78,7 @@ const productController = {
     // Update - Form to edit
 
     edit: (req,res) =>{
-        let productToEdit = products.find(req.params.id)
+        let productToEdit = productModel.findById(req.params.id)
         res.render("productos/editProduct",
         {
             title: "Editar producto",
@@ -88,7 +91,7 @@ const productController = {
 
     update: (req, res) => {
 		let id = Number(req.params.id);
-		let productToEdit = products.find(id);
+		let productToEdit = productModel.findById(id);
 		let images = [];
 		let files = req.files
 		
@@ -104,7 +107,7 @@ const productController = {
 			image: files.length >= 1  ? images : productToEdit.image
 		}
 
-		products.update(productToEdit)
+		productModel.update(productToEdit)
 		res.redirect("/");
 	},
 
@@ -113,7 +116,7 @@ const productController = {
 
     destroy: function(req,res){
         let id = Number(req.params.id);
-        products.delete(id);
+        productModel.delete(id);
         res.redirect("/");
     }
 

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 // Recibo por parámetro la entidad para reutilizarlo
 
-const modelController = function (name) {
+const universalModel = function (name) {
     console.log('entre al modelo de Mercado')
     console.log(name)
     console.log(path.resolve(__dirname, '../data/', `${name}.json`))
@@ -25,15 +25,15 @@ const modelController = function (name) {
             let rows = this.readFile();
             let lastRow = rows.pop();
 
-            return lastRow.id ? ++lastRow.id : 1;
+            return lastRow ? ++lastRow.id : 1;
         },
         // Leo todos los registros del archivo
-        all: function () {
+        findAll: function () {
             
             return this.readFile();
         },
         // Busco por id
-        find: function (id) {
+        findById: function (id) {
             let rows = this.readFile();
             console.log(" --- por el find")
             return rows.find(i => i.id == id);
@@ -114,14 +114,14 @@ const modelController = function (name) {
         },
 
         findFirstByField: function(text){
-            let rows = this.all();
+            let rows = this.findAll();
     
             let elementFound = rows.find(element => element.id == text);
             return elementFound;
         },
 
         findAllByField: function(text){
-            let rows = this.all();
+            let rows = this.findAll();
             let allElementsFound = rows.filter(element => element.estado == text);
             return allElementsFound;
         },
@@ -132,4 +132,4 @@ const modelController = function (name) {
     }
 }
 
-module.exports = modelController
+module.exports = universalModel
