@@ -59,8 +59,36 @@ const productController = {
 
     // Create -  Method to store
     store: (req, res) => {
-		let images= []
-        let files = req.files
+		const files = req.files
+        
+        const resultadosValidaciones = validationResult(req);
+        if (!resultadosValidaciones.isEmpty()){
+            console.log("----- ojo HAY ERRORES -----------------")
+            
+            // Si hay errores borramos los archivos que cargó multer
+            files.forEach( file => {
+                const filePath = path.join(__dirname, `../../public/images/products/${file.filename}`);
+                fs.unlinkSync(filePath);
+            })
+            
+            console.log("-------- my body -------------------")
+            console.log(req.body);  
+
+            console.log("-------- resultadosValidaciones.mapped() -------------------")
+            console.log(resultadosValidaciones.mapped());  
+
+
+            return res.render('./productos/addProduct', {
+                title: "Crear producto",
+                errors: resultadosValidaciones.mapped(),
+                // oldData son los datos recién cargados es decir el req.body
+                oldData: req.body
+            })
+        }
+
+        console.log("--Muy bien, no hay errores ---------------------------");
+
+        let images= []
         files.forEach(image => {
 			images.push(image.filename)
 		});
@@ -79,7 +107,7 @@ const productController = {
 
     edit: (req,res) =>{
         let productToEdit = productModel.findById(req.params.id)
-        res.render("productos/editProduct",
+        res.render("./productos/editProduct",
         {
             title: "Editar producto",
             productToEdit
@@ -90,10 +118,40 @@ const productController = {
     // Update - Method to update
 
     update: (req, res) => {
-		let id = Number(req.params.id);
+		const files = req.files
+        const id = req.params.id;
+
+        const resultadosValidaciones = validationResult(req);
+        console.log(resultadosValidaciones);
+       
+        // Con este if preguntamos si hay errores de validación
+        if (!resultadosValidaciones.isEmpty()){
+            console.log("----- ojo HAY ERRORES -----------------")
+            
+            // Si hay errores borramos los archivos que cargó multer
+            files.forEach( file => {
+                const filePath = path.join(__dirname, `../../public/images/products/${file.filename}`);
+                fs.unlinkSync(filePath);
+            })
+            
+            console.log("-------- my body -------------------")
+            console.log(req.body);  
+
+            const productToEdit = productModel.findById(id);
+
+            return res.render('./productos/editProduct', {
+                title: "Editar producto",
+                productToEdit,
+                errors: resultadosValidaciones.mapped(),
+                // oldData son los datos recién cargados es decir el req.body
+                oldData: req.body
+            })
+        }
+
 		let productToEdit = productModel.findById(id);
-		let images = [];
-		let files = req.files
+		
+        let images = [];
+		
 		
 		// cambiamos ciclo for por forEach
 		files.forEach(image => {
@@ -115,8 +173,21 @@ const productController = {
     // Update - Method to delete
 
     destroy: function(req,res){
-        let id = Number(req.params.id);
+        // Desestructuramos el id del req.params
+        const { id } = req.params;
+
+        // Desestructuramos la propiedad image del producto encontrado y lo renombramos
+        const { image: imagenesBorrar} = productModel.findById(id);
+        // Procedemos a iterar el array de imagenes con un forEach y borrarlas del FS
+        imagenesBorrar.forEach( file => {
+            const filePath = path.join(__dirname, `../../public/images/products/${file}`);
+            fs.unlinkSync(filePath);
+        });
+
+        // Borramos el producto del archivo JSON
         productModel.delete(id);
+        
+        // Redirigimos al Home
         res.redirect("/");
     }
 
