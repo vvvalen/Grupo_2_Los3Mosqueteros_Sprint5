@@ -2,7 +2,7 @@ const { validationResult } = require("express-validator");
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-// const universalModel = require("../model/universalModel");
+
 const universalModel = require("../model/universalModel");
 const userModel = universalModel("users");
 

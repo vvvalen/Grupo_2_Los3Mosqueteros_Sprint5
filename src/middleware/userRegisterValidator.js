@@ -2,7 +2,11 @@ const { body } = require("express-validator");
 const path = require('path');
 
 const userRegisterValidation = [
-    body("fullName")
+    body("firstname")
+        .notEmpty().withMessage("El campo no puede estar vacío").bail()
+        .isLength({ min: 2 }).withMessage("El nombre debe contener al menos 2 caracteres"),
+
+    body("lastname")
         .notEmpty().withMessage("El campo no puede estar vacío").bail()
         .isLength({ min: 2 }).withMessage("El nombre debe contener al menos 2 caracteres"),
 
@@ -21,9 +25,10 @@ const userRegisterValidation = [
             
             return true;
         }),
+    
     body("checkpassword")
-    .notEmpty().withMessage("El campo no puede estar vacío").bail()
-    .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres"),
+        .notEmpty().withMessage("El campo no puede estar vacío").bail()
+        .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres"),
 
     
     body("avatar")
@@ -32,7 +37,7 @@ const userRegisterValidation = [
             const { file } = req;
 
             if(file){
-                const extensionesValidas = [".png", ".jpg", ".jpeg"];
+                const extensionesValidas = [".png", ".jpg", ".jpeg", ".svg"];
     
                 const fileExtension = path.extname(file.originalname);
     
