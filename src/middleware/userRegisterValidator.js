@@ -19,7 +19,7 @@ const userRegisterValidation = [
         .isLength({ min: 8 }).withMessage("La contraseña debe contener al menos 8 caracteres").bail()
         .custom((value, { req }) => {
 
-            if(value != req.body.rePassword){
+            if(value != req.body.checkpassword){
                 throw new Error('Las contraseñas no coinciden');
             }
             

@@ -1,3 +1,12 @@
 [
-    
+ {
+  "firstname": "Ezequiel",
+  "lastname": "Santillan",
+  "email": "santillanezequielm@gmail.com",
+  "telephone": "1132121681",
+  "password": "$2a$10$cv7Ysb7jyf0Mk1WYSE6MleiBaKPTTaZWYhUqLBPQvUpWX8I1QW/86",
+  "checkpassword": "contraseña",
+  "image": "default-user.svg",
+  "id": 1
+ }
 ]

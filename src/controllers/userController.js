@@ -4,7 +4,7 @@ const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
 const universalModel = require("../model/universalModel");
-const userModel = universalModel("users");
+const userModel = require("../model/usersModel");
 
 const userController = {
 
@@ -33,7 +33,7 @@ const userController = {
             console.log(req.body);
 
             delete req.body.password;
-            delete req.body.rePassword;
+            delete req.body.checkpassword;
 
             console.log(req.body);
 
@@ -45,7 +45,7 @@ const userController = {
             })
         }
         
-        const existeEmail = userModel.findFirstByField("email", req.body.email);
+        const existeEmail = userModel.findFirstByField('email',req.body.email);
 
         if(existeEmail){
             if(file){
@@ -76,12 +76,12 @@ const userController = {
 
         userModel.create(newUsuario);
 
-        return res.redirect("/users/login");
+        return res.redirect("login");
     },
 
     // 3. Mostrar form login
     login: (req,res) =>{
-        res.render("/users/login",
+        res.render("users/login",
         {
             title: "Login"
         }
@@ -99,7 +99,7 @@ const userController = {
                 title: "Login"
             })
         }
-        const usuarioRegistrado = userModel.findFirstByField("email", req.body.email);
+        const usuarioRegistrado = userModel.findFirstByField(req.body.email);
 
         if(!usuarioRegistrado){
             const error = {
