@@ -71,17 +71,18 @@ const userController = {
         const newUsuario = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 10),
+            checkpassword: bcrypt.hashSync(req.body.checkpassword, 10),
             image: file ? file.filename : "default-user.svg"
         };
 
         userModel.create(newUsuario);
 
-        return res.redirect("/users/login");
+        return res.redirect("login");
     },
 
     // 3. Mostrar form login
     login: (req,res) =>{
-        res.render("/users/login",
+        res.render("users/login",
         {
             title: "Login"
         }
@@ -99,7 +100,7 @@ const userController = {
                 title: "Login"
             })
         }
-        const usuarioRegistrado = userModel.findFirstByField("email", req.body.email);
+        const usuarioRegistrado = userModel.findFirstByField("email",req.body.email);
 
         if(!usuarioRegistrado){
             const error = {

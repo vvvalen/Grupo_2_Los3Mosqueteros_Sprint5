@@ -38,7 +38,7 @@ app.use("/users", userRouter)
 const productRouter = require("./routes/productRouter")
 app.use("/products", productRouter)
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3030;
 
 /*app.use((req, res, next) => {
     const error = new Error('Error 404 - No se encontró la pagina solicitada');

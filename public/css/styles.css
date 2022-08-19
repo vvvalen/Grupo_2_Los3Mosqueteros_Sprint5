@@ -731,6 +731,13 @@ h1::after{
 
 
 /* Ezequiel */
+div.errorValidacion {
+    width: 100%;
+}
+
+div.errorValidacion p {
+    color:rgb(200, 59, 59);
+}
 
 main section div.products {
     padding: 20px;
@@ -1210,6 +1217,10 @@ section.banner div img{
     .login-register-form div {
         width: 60%;
         margin: auto;
+    }
+
+    div.errorValidacion {
+        width: 100%;
     }
 }
 

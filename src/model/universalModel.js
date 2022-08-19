@@ -113,9 +113,9 @@ const universalModel = function (name) {
 
         },
 
-        findFirstByField: function(text){
-            let rows = this.findAll();
-    
+        //findFirstByField: function(text){
+        //    let rows = this.findAll();
+    /*
             let elementFound = rows.find(element => element.id == text);
             return elementFound;
         },
@@ -124,7 +124,18 @@ const universalModel = function (name) {
             let rows = this.findAll();
             let allElementsFound = rows.filter(element => element.estado == text);
             return allElementsFound;
+        },*/
+        findFirstByField: function(field, text){
+            let rows = this.findAll();
+            let elementFound = rows.find(element => element[field] == text);
+            return elementFound;
         },
+
+        findAllByField: function(field, text){
+            let rows = this.findAll();
+            let allElementsFound = rows.filter(element => element[field] == text);
+            return allElementsFound;
+        }
 
     
 

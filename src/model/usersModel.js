@@ -122,8 +122,6 @@ const userController = {
             let allElementsFound = rows.filter(element => element.estado == text);
             return allElementsFound;
         },
-
-
     }
 
 
