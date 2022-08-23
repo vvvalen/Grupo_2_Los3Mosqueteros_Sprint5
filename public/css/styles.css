@@ -1337,3 +1337,73 @@ section.banner div img{
 
 
 }
+
+
+
+/* -------------- PROFILE usuario logueado -------------- */
+
+
+.userSaludo{
+    margin-bottom: 20px;
+    color: #f9fffd;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.userInformacion{
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.userAvatar img{
+    width: 100%;
+    margin-bottom: 15px;
+    max-width: 300px;
+}
+
+.userPerfil{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.infoTitulo{
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.userName{
+    color: #221f1f;
+    font-weight: 600;
+    padding-bottom: 3px;
+    font-size: 22px;
+}
+
+.nombreCompleto{
+    margin-bottom: 8px;
+}
+
+.userEmail{
+    font-size: 18px;
+    padding-bottom: 3px;
+    font-weight: 500;
+    color: #0f372c;
+}
+
+/* -------------- PROFILE -------------- */
+
+    .userInformacion{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .userAvatar{
+        margin-right: 30px;
+    }
+
+    .userPerfil{
+        margin-top: 20px;
+    }
+

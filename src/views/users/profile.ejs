@@ -6,17 +6,27 @@
 <body>
     <%- include("../partials/header.ejs") %>
     <main class="main-login-register">
-        <h2 class="title">
-		<div class="row">
-			<div class="col-md-3">
-				<h2>Hi <%= users.firstname %> </h2>
-				<img src="/images/users/<%= users.image %> ">
-				<br>
-				<br>
-				<div class="alert alert-success"><%= users.email %> </div>
-			</div>
-		</div>
-	</div>
-    <%- include("../partials/footer.ejs") %>
+		<%console.log(locals.userLogged)%>
+        <h1 class= "userSaludo"> ¡Hola<%= locals.usuarioLogueado.firstname %>!</h1>
+		<div class="userInformacion">
+            <figure class="userAvatar">
+                <img src="/images/users/<%= locals.usuarioLogueado.image %> " alt="Imagen de perfil">
+            </figure>
+			<div class="userPerfil">
+                <p class="infoTitle">Información de usuario:</p>
+                <div class="nombreCompleto">
+                    <p class="dataTitle">Nombre y apellido</p>
+                    <p class="userName"><%= locals.usuarioLogueado.firstname%> <%= locals.usuarioLogueado.lastname %></p>
+                </div>
+                <div class="userDatabase">
+                    <p class="dataTitle">Email:</p>
+                    <p class="userEmail"> <%= locals.usuarioLogueado.email %></p>
+                </div>
+            </div>
+        </div>
+    </main>
+	<footer>
+		<%- include("../partials/footer.ejs") %>
+	</footer>
 </body>
 </html>
