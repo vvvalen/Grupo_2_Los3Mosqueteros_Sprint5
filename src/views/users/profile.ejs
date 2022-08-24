@@ -6,18 +6,14 @@
 <body>
 
     <%- include("../partials/header.ejs") %>
-    
     <main class="main-login-register">
-    <section>
-        <%console.log(locals.userLogged)%>   
-            <h1 class= "userSaludo"> ¡Hola <%= locals.usuarioLogueado.firstname %>!</h1>
-    </section>
+        <h1 class= "userSaludo"> ¡Hola <%= locals.usuarioLogueado.firstname %>!</h1>
 		<div class="userInformacion">
             <figure class="userAvatar">
                 <img src="/images/users/<%= locals.usuarioLogueado.image %> " alt="Imagen de perfil">
             </figure>
 			<div class="userPerfil">
-                <p class="infoTitulo">Información de usuario:</p>
+                <p class="infoTitulo">Información del usuario</p>
                 <div class="nombreCompleto">
                     <p class="dataTitle">Nombre y apellido</p>
                     <p class="userName"><%= locals.usuarioLogueado.firstname%> <%= locals.usuarioLogueado.lastname %></p>

@@ -1343,14 +1343,16 @@ section.banner div img{
 /* -------------- PROFILE usuario logueado -------------- */
 
 
-.userSaludo{
-    margin-bottom: 20px;
+h1.userSaludo {
+    margin-bottom: 40px;
     text-align: center;
     color: #101111;
     font-size: 20px;
     font-weight: 500;
-    margin-top: 20px;
+    margin-top: 0;
+    padding-top: 20px;
     background: inherit;
+    text-decoration: underline;
 }
 
 .userInformacion{
@@ -1358,6 +1360,7 @@ section.banner div img{
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
+    
 }
 
 .userAvatar img{
@@ -1368,22 +1371,27 @@ section.banner div img{
 
 .userPerfil{
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 2px rgb(75, 75, 75);
+    border: 1px solid #292E33;
+    margin: 2em;
+    padding: 2em;
 }
 
 .infoTitulo{
-    color: #1a1818;
+    color: #292E33;
     margin-bottom: 25px;
     font-family: 'Orbitron', sans-serif;
     font-weight: 500;
     font-size: 22px;
+    
 }
 
 .userName{
-    color: #221f1f;
+    color: #292E33;
     font-weight: 300;
     padding-bottom: 3px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -1395,12 +1403,12 @@ section.banner div img{
     font-size: 18px;
     padding-bottom: 3px;
     font-weight: 300;
-    color: #050505;
+    color: #292E33;
     font-family: 'Orbitron', sans-serif;
 }
 
 .dataTitle {
-    color: #221f1f;
+    color: #292E33;
     font-weight: 500;
     padding-bottom: 3px;
     font-size: 18px;
@@ -1422,5 +1430,6 @@ section.banner div img{
 
     .userPerfil{
         margin-top: 20px;
+
     }
 
