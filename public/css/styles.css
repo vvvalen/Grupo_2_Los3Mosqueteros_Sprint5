@@ -1345,7 +1345,8 @@ section.banner div img{
 
 .userSaludo{
     margin-bottom: 20px;
-    color: #f9fffd;
+    text-align: center;
+    color: #101111;
     font-size: 20px;
     font-weight: 500;
 }
@@ -1368,15 +1369,19 @@ section.banner div img{
 }
 
 .infoTitulo{
-    color: #ffffff;
-    margin-bottom: 15px;
+    color: #1a1818;
+    margin-bottom: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
 }
 
 .userName{
     color: #221f1f;
-    font-weight: 600;
+    font-weight: 300;
     padding-bottom: 3px;
-    font-size: 22px;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .nombreCompleto{
@@ -1386,8 +1391,17 @@ section.banner div img{
 .userEmail{
     font-size: 18px;
     padding-bottom: 3px;
+    font-weight: 300;
+    color: #050505;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.dataTitle {
+    color: #221f1f;
     font-weight: 500;
-    color: #0f372c;
+    padding-bottom: 3px;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 /* -------------- PROFILE -------------- */

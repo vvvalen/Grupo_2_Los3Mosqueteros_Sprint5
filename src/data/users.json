@@ -28,5 +28,15 @@
   "checkpassword": "$2a$10$mcGGGV/RMfTbL4yvx5.4OuOcmNGWDxEja09h6RT.ylblIdYYH0.eW",
   "image": "default-user.svg",
   "id": 3
+ },
+ {
+  "firstname": "Laurin",
+  "lastname": "Linares Font",
+  "email": "laura_lf20@hotmail.com",
+  "telephone": "1154875744",
+  "password": "$2a$10$vqOr.ru78rdajUJkTx5w3Ok9duuXOVkL5mNXD/nRTYGlcl/P9QpZm",
+  "checkpassword": "$2a$10$/fvPVRWSxfKSRL8G3QQK8OUADD8bSAqF/A/ly4IGL3gaQEqVx7YoO",
+  "image": "default-user.svg",
+  "id": 4
  }
 ]
