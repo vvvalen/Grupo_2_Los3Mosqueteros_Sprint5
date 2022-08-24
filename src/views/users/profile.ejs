@@ -4,10 +4,14 @@
         <%- include("../partials/head.ejs") %>
     </head>
 <body>
+
     <%- include("../partials/header.ejs") %>
+    
     <main class="main-login-register">
-		<%console.log(locals.userLogged)%>
-        <h1 class= "userSaludo"> ¡Hola<%= locals.usuarioLogueado.firstname %>!</h1>
+    <section>
+        <%console.log(locals.userLogged)%>   
+            <h1 class= "userSaludo"> ¡Hola <%= locals.usuarioLogueado.firstname %>!</h1>
+    </section>
 		<div class="userInformacion">
             <figure class="userAvatar">
                 <img src="/images/users/<%= locals.usuarioLogueado.image %> " alt="Imagen de perfil">
@@ -24,7 +28,10 @@
                 </div>
             </div>
         </div>
-    </main>   
+        <%- include("../partials/seguinos.ejs") %>
+        <%- include("../partials/conoceMas.ejs") %>
+        
+    </main>
     <%- include("../partials/footer.ejs") %>
 </body>
 </html>
