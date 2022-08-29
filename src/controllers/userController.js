@@ -147,13 +147,13 @@ const userController = {
           title: "Profile"
       });
   },
-    /* 6. Logout user
-	logout: (req, res) => {
-		res.clearCookie('userEmail');
-		req.session.destroy();
-		return res.redirect('/');
-	}
-    */
+    // 6. Logout user
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    }
+    
 
 }
 
