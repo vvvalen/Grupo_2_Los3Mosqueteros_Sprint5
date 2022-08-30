@@ -30,7 +30,6 @@ const productController = {
         res.render("productos/productCart",
         {
             title: "Carrito",
-            product,
             
         }
         )
@@ -63,20 +62,11 @@ const productController = {
         
         const resultadosValidaciones = validationResult(req);
         if (!resultadosValidaciones.isEmpty()){
-            console.log("----- ojo HAY ERRORES -----------------")
-            
-            // Si hay errores borramos los archivos que cargó multer
+
             files.forEach( file => {
                 const filePath = path.join(__dirname, `../../public/images/products/${file.filename}`);
                 fs.unlinkSync(filePath);
             })
-            
-            console.log("-------- my body -------------------")
-            console.log(req.body);  
-
-            console.log("-------- resultadosValidaciones.mapped() -------------------")
-            console.log(resultadosValidaciones.mapped());  
-
 
             return res.render('./productos/addProduct', {
                 title: "Crear producto",
@@ -85,8 +75,6 @@ const productController = {
                 oldData: req.body
             })
         }
-
-        console.log("--Muy bien, no hay errores ---------------------------");
 
         let images= []
         files.forEach(image => {

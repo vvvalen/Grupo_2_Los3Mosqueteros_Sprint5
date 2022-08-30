@@ -873,6 +873,7 @@ a.link-detail {
     main section div.products article {
         width: 22%;
         margin: 1%;
+        align-self: center;
     }
 
     main section div.products {

@@ -30,7 +30,6 @@ app.set('view engine', 'ejs');
 const mainRouter = require("./routes/mainRouter")
 app.use("/" ,mainRouter)
 
-//Users
 const userRouter = require("./routes/userRouter")
 app.use("/users", userRouter)
 
@@ -40,7 +39,7 @@ app.use("/products", productRouter)
 
 const port = process.env.PORT || 3030;
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     const error = new Error('Error 404 - No se encontró la pagina solicitada');
     res.status(404).render('/partials/404', {
         message: error.message,
@@ -49,7 +48,7 @@ app.use((req, res, next) => {
         error
     })
 
-})
+})*/
 
 app.listen(port, () => {
     console.log("Servidor corriendo en el puerto " + port);
