@@ -8,8 +8,10 @@
     <main class ="main-detail">
             <h2 class="title">DETALLE DEL PRODUCTO</h2>
         </section>
-        <section class="main.conteiner">
-                    <img class="img-product" src="/images/products/<%= product.image[0] %>" alt="imagen producto">
+        <section class="main-conteiner">
+            <div class="img-product">
+                    <img src="/images/products/<%= product.image[0] %>" alt="imagen producto">
+                    </div>
                     <div class="inf-product">
                         <h4> <%= product.name %> </h4>
                         <h4>$<%= product.price %></h4>

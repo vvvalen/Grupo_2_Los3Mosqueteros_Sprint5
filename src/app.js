@@ -39,16 +39,10 @@ app.use("/products", productRouter)
 
 const port = process.env.PORT || 3030;
 
-/*app.use((req, res, next) => {
-    const error = new Error('Error 404 - No se encontró la pagina solicitada');
-    res.status(404).render('/partials/404', {
-        message: error.message,
-        path: `http://${req.hostname}:${port}${req.url}`,
-        status: 404,
-        error
-    })
-
-})*/
+/*404
+app.use(function(req, res, next){
+    res.status(404).render('404.ejs', {title: "Sorry, page not found"});
+});*/
 
 app.listen(port, () => {
     console.log("Servidor corriendo en el puerto " + port);

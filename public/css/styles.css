@@ -195,11 +195,23 @@ footer section h5, span{
     display: flex;
     
 }
-.img-product{
-    width: 100%;
+
+div .img-product{
+    width: 50%;
     padding-top: 10px;
-    align-self:  center;    
+    padding-bottom: 10px;
+    align-self: left;
+    align-items: left;
+    
 }
+
+.img-product img {
+    width: 80%;
+    align-self: left;
+    align-items: left;
+    justify-content: center;
+}
+
 .inf-product{
     width: 100%;
     text-align: center;
@@ -302,6 +314,9 @@ footer section h5, span{
     
     .img-product{
         width: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-self: center; 
     }
     .inf-product{
         width: 50%;
@@ -473,7 +488,7 @@ footer section h5, span{
 }
 
  form .button-delete { 
-    width: 75%;
+    width: 65%;
     color:white;
     border: none;
     padding: 10px 5px;
@@ -489,7 +504,7 @@ footer section h5, span{
  }
 
 .button-edit {
-    width: 75%;
+    width: 65%;
     color:white;
     border: none;
     padding: 10px 5px;
@@ -771,7 +786,7 @@ main section div.products img {
 }
 
 div.add-cart {
-    width: 50%;
+    width: 65%;
     margin: 0 auto; 
 }
 
@@ -815,7 +830,6 @@ a.add-cart {
     padding: 2%;
     margin-bottom: 2%;
     text-align: center;
-    font-family: purista; 
     border-radius: 5px; 
     font-weight: bold;
     font-size: 14px;
