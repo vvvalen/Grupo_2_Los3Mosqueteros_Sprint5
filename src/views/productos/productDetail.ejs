@@ -33,6 +33,8 @@
                             <a class="add-cart" href="/products/productCart" role="button"><p>Agregar al carrito</p></a> 
                         </form>
                         <!-- Agregado de boton editar y eliminar-->
+                        
+                        <% if (locals.usuarioLogueado && locals.usuarioLogueado.admin == true) { %>
                         <div class="button-admin">
                             <a href="/products/edit/<%= product.id %>">
                                 <button class="button-edit">Editar <i class="fa-solid fa-file-pen"></i></button>
@@ -41,12 +43,9 @@
                             <button type="submit" class="button-delete">Eliminar</button>
                             </form>
 
-                            <!--<div class="button-admin">
-                                <input class="button" type="submit" value="Editar">
-                                <input class="button" type="submit" value="Eliminar">
-                            </div>-->
-                        <br>
-                    </div>
+                            <br>
+                        </div>
+                        <% } %>
         </section>
         <%- include("../partials/seguinos.ejs") %>
         <%- include("../partials/conoceMas.ejs") %>
