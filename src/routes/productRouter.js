@@ -13,7 +13,7 @@ const productEditValidation = require('../middleware/productEditValidation');
 
 router.get("/", productController.listadoProductos)
 
-router.get("/create", authMiddleware,productController.create)
+router.get("/create",productController.create)
 
 router.post('/', upload.array("image"), productCreateValidation , productController.store);
 

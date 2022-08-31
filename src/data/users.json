@@ -17,7 +17,8 @@
   "password": "$2a$10$/Fcu3Mfh5.qcfVojUWx6QOAHc4ZEdTGuypYHsZuf2H2NeATCfi40G",
   "checkpassword": "hola1234",
   "image": "default-user.svg",
-  "id": 2
+  "id": 2,
+  "admin": true
  },
  {
   "firstname": "FRan",
@@ -27,7 +28,6 @@
   "password": "$2a$10$Pax/n1ppPRs9Ig0AGSIOt.q7zAgEiK0AE8DvGCffP3BqAzbTa0b3m",
   "checkpassword": "$2a$10$mcGGGV/RMfTbL4yvx5.4OuOcmNGWDxEja09h6RT.ylblIdYYH0.eW",
   "image": "default-user.svg",
-  "category": "admin",
   "id": 3
  },
  {
