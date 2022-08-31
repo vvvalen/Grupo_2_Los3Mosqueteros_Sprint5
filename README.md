@@ -1,5 +1,8 @@
 # Grupo_2_Los3Mosqueteros_Sprint2
 
+USUARIO ADMIN: fran@gmail.com
+CONTRASEÑA: hola1234
+
 **Descripción de negocio:**
 
 Vamos a crear un e-commerce que comercialice muebles estilo industrial, productos fabricados por un emprendimiento real de uno de los miembros del grupo.

@@ -1,6 +1,3 @@
-USUARIO ADMIN: FRAN@GMAIL.COM
-CONTRASEÑA: hola1234
-
 Retrospectiva del grupo:
 
 Realizamos un analisis charlando en grupo sobre nuestra experiencia de este sprint:
