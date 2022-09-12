@@ -14,15 +14,15 @@
  },
  {
   "id": 2,
-  "name": "Mesa Cruz Guayubirá",
-  "price": "130.000",
+  "name": "Mesa Cruz Guayubirá   ",
   "description": "Mesa de comedor de hierro y madera estilo industrial",
+  "measures": "1",
+  "price": "135",
+  "discount": "15",
+  "category": "table",
   "image": [
-   "mesa-x.jpg"
-  ],
-  "measures": "1.20mts de largo - 70cm de ancho - 75cm de alto.",
-  "discount": 15,
-  "category": "table"
+   "imgProduct_1663020086604.jpg"
+  ]
  },
  {
   "id": 3,
