@@ -64,11 +64,21 @@
                 <div>
                     <label for="category">Categoría</label>
                     <select name="category" id="category" class="category-control">
-                        <option value="">Elegí</option>
-                        <option value="table">Mesas</option>
-                        <option value="coffeeTable">Mesas Ratonas</option>
-                        <option value="desk">Escritorios</option>
-                        <option value="mirror">Espejos</option>
+                        <option value="deafult" <% if(productToEdit.category == "deafault") {%> 
+                            selected 
+                            <% } %>>Elegí</option>
+                        <option value="table" <% if(productToEdit.category == "table") {%> 
+                            selected 
+                        <% } %>>Mesas</option>
+                        <option value="coffeeTable" <% if(productToEdit.category == "cofeeTable") {%> 
+                            selected 
+                        <% } %>>Mesas Ratonas</option>
+                        <option value="desk" <% if(productToEdit.category == "desk") {%> 
+                            selected 
+                        <% } %>>Escritorios</option>
+                        <option value="mirror" <% if(productToEdit.category == "mirror") {%> 
+                            selected 
+                        <% } %>>Espejos</option>
                     </select>
                     <% if (locals.errors && errors.category) { %>
                         <div class="errorValidacion">
