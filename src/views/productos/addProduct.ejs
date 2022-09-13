@@ -10,7 +10,12 @@
     <main class="main-login-register">
         
             <h2 class="title">CREAR PRODUCTO</h2>
-            <%- include("../partials/createForm.ejs") %>
+            <% if (locals.errors && locals.oldData) { %>
+                <%- include('../partials/createForm.ejs',{errors, oldData}) %>
+            <% } else { %>
+                <%- include('../partials/createForm.ejs') %>
+            <% } %>
+
         </section>
         
         <%- include("../partials/seguinos.ejs") %>
